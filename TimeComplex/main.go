@@ -21,7 +21,7 @@ func main() {
 	PrintAllPairs(5)
 
 	fmt.Println("////////NumberOfHalves////////")
-	var count = NumberOfHalves(5)
+	var count = NumberOfHalves(10)
 	fmt.Println(count)
 
 	fmt.Println("////////TotalNumberOfHalves////////")

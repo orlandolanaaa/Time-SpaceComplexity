@@ -4,62 +4,50 @@ import (
 	"fmt"
 )
 
-// AddUpTo func O(n)
+// AddUpTo func O(1)+n*O(1)+O(1) = O(n)
 func AddUpTo(num int) int {
 	var total int = 0
+	//O(1)
 
 	for i := 1; i <= num; i++ {
 		total += i
-
+		//n*O(1)
 	}
-
 	return total
+	//O(1)
 }
 
 // AddUpToOpt func Big O(1)
 func AddUpToOpt(num int) int {
-	return num * (num + 1) / 2
+	return num * (num + 1) / 2 // O(1)
 }
 
 // CountUpAndDown func Big O(n+m) => O(n)
 func CountUpAndDown(n int) {
 	fmt.Println("Going up!")
+	//O(1)
 	for i := 1; i < n; i++ {
 		fmt.Println(i)
+		//n*O(1)
 	}
 	fmt.Println("At the top!\nGoing down...")
 	for j := n - 1; j >= 0; j-- {
 		fmt.Println(j)
+		//m*O(1)
 	}
 	fmt.Println("Back down. Bye!")
+	//O(1)
 }
 
-// PrintAllPairs func Big O(n+m) => O(n)
+// PrintAllPairs func Big O(n*n) = O(n2)
 func PrintAllPairs(n int) {
 	for i := 0; i < n; i++ {
+		//n*O(1)
 		for j := 0; j < n; j++ {
 			fmt.Println(i, j)
+			//n*O(1)
 		}
 	}
-}
-
-// NumberOfHalves func Big O(n)
-func NumberOfHalves(n int) int {
-	var count int = 0
-	for n > 1 {
-		n /= 2
-		count++
-	}
-	return count
-}
-
-// TotalNumberOfHalves func Big O(n+m) => O(n)
-func TotalNumberOfHalves(n int) int {
-	var total = 0
-	for i := 0; i < n; i++ {
-		total += NumberOfHalves(n)
-	}
-	return total
 }
 
 // PrintAtLeast5 func Big O(n)
